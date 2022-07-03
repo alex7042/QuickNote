@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">QuickNote</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="toast_enter_name">Введите имя заметки!</string>
+    <string name="app_title">Заметки</string>
+    <string name="note_title">Имя заметки</string>
+    <string name="note_text">Текст заметки</string>
+    <string name="btn_add_note">Добавить</string>
+    <string name="bnt_room">Room</string>
+</resources>
