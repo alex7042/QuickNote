@@ -43,6 +43,9 @@
             app:destination="@id/mainFragment"
             app:launchSingleTop="true"
             app:popUpTo="@id/navigation" />
+        <argument
+            android:name="currentNote"
+            app:argType="com.example.quicknote.models.AppNote" />
     </fragment>
     <fragment
         android:id="@+id/startFragment"

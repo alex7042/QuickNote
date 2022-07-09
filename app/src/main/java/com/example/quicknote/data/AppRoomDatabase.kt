@@ -1,4 +1,4 @@
-package com.example.quicknote.room
+package com.example.quicknote.data
 
 import android.content.Context
 import androidx.room.Database

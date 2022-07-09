@@ -1,4 +1,4 @@
-package com.example.quicknote.room
+package com.example.quicknote.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
@@ -15,4 +15,7 @@ interface AppRoomDao{
 
     @Delete
     suspend fun delete(note: AppNote)
+
+    @Update
+    suspend fun update(note: AppNote)
 }

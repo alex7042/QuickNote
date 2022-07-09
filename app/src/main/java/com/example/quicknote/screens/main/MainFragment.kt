@@ -1,10 +1,11 @@
 package com.example.quicknote.screens.main
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
@@ -60,7 +61,7 @@ class MainFragment : Fragment() {
 
     companion object{
 
-        fun click(note: AppNote){
+        fun onClick(note: AppNote){
             val bundle = Bundle()
             bundle.putSerializable("note", note)
             APP_ACTIVITY.mNavController.navigate(R.id.action_mainFragment_to_noteFragment, bundle)

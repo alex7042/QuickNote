@@ -9,6 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green">#47C84D</color>
     <color name="green_main">#B7FDBB</color>
-    <color name="grey">#BFBFBF</color>
-    <color name="grey_item">#E6E6E6</color>
+    <color name="grey_item">#D8D8D8</color>
+    <color name="grey">#EAEAEA</color>
+    <color name="selected_item">#7E7E7E</color>
+
 </resources>
+

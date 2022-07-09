@@ -2,8 +2,8 @@ package com.example.quicknote.screens.start
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import com.example.quicknote.room.AppRoomDatabase
-import com.example.quicknote.room.AppRoomRepository
+import com.example.quicknote.data.AppRoomDatabase
+import com.example.quicknote.data.AppRoomRepository
 import com.example.quicknote.utilities.REPOSITORY
 import com.example.quicknote.utilities.TYPE_ROOM
 

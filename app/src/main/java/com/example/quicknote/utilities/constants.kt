@@ -1,8 +1,7 @@
 package com.example.quicknote.utilities
 
 import com.example.quicknote.MainActivity
-import com.example.quicknote.room.AppRoomRepository
-import com.example.quicknote.room.DatabaseRepository
+import com.example.quicknote.data.DatabaseRepository
 
 lateinit var APP_ACTIVITY: MainActivity
 lateinit var REPOSITORY:DatabaseRepository

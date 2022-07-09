@@ -1,4 +1,4 @@
-package com.example.quicknote.room
+package com.example.quicknote.data
 
 import androidx.lifecycle.LiveData
 import com.example.quicknote.models.AppNote
@@ -15,6 +15,11 @@ class AppRoomRepository(private val appRoomDao: AppRoomDao):DatabaseRepository {
 
     override suspend fun delete(note: AppNote, onSuccess: ()->Unit) {
         appRoomDao.delete(note)
+        onSuccess()
+    }
+
+    override suspend fun update(note: AppNote, onSuccess: () -> Unit) {
+        appRoomDao.update(note)
         onSuccess()
     }
 }

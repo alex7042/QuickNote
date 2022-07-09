@@ -37,7 +37,7 @@ class AddNewNoteFragment : Fragment() {
 
     private fun initialization() {
         mViewModel = ViewModelProvider(this)[AddNewNoteViewModel::class.java]
-        mBinding.btnAddNote.setOnClickListener{
+        mBinding.btnAddNewNote.setOnClickListener{
             val name = mBinding.inputNameNote.text.toString()
             val text = mBinding.inputTextNote.text.toString()
             if (name.isEmpty()){

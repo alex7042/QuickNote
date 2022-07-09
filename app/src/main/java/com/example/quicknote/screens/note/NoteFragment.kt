@@ -4,10 +4,14 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
 import com.example.quicknote.R
 import com.example.quicknote.databinding.FragmentNoteBinding
 import com.example.quicknote.models.AppNote
 import com.example.quicknote.utilities.APP_ACTIVITY
+import com.example.quicknote.utilities.showToast
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class NoteFragment : Fragment() {
@@ -23,6 +27,8 @@ class NoteFragment : Fragment() {
     ): View {
         _binding = FragmentNoteBinding.inflate(layoutInflater,container,false)
         mCurrentNote = arguments?.getSerializable("note") as AppNote
+        mBinding.updateTextNote.setText(mCurrentNote.text)
+        mBinding.updateNameNote.setText(mCurrentNote.name)
         return mBinding.root
     }
 
@@ -33,10 +39,24 @@ class NoteFragment : Fragment() {
 
     private fun initialization() {
         setHasOptionsMenu(true)
-        mBinding.noteText.text = mCurrentNote.text
-        mBinding.noteName.text = mCurrentNote.name
         mViewModel = ViewModelProvider(this)[NoteFragmentViewModel::class.java]
+        mBinding.btnUpdateNote.setOnClickListener{
+            updateItem()
+        }
+    }
 
+    private fun updateItem(){
+        val currentName = mBinding.updateNameNote.text.toString()
+        val currentText = mBinding.updateTextNote.text.toString()
+        if (currentName.isEmpty()){
+            showToast(getString(R.string.toast_enter_name))
+        }else{
+            mViewModel.update(AppNote(mCurrentNote.id, name = currentName, text = currentText)){
+                mViewModel.viewModelScope.launch(Dispatchers.Main){
+                    APP_ACTIVITY.mNavController.navigate(R.id.action_noteFragment_to_mainFragment)
+                }
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
