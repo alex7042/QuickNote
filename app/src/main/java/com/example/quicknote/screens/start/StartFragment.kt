@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.quicknote.R
 import com.example.quicknote.databinding.FragmentStartBinding
 import com.example.quicknote.utilities.APP_ACTIVITY
 import com.example.quicknote.utilities.TYPE_ROOM
+import com.example.quicknote.utilities.showToast
 
 
 class StartFragment : Fragment() {
@@ -37,6 +39,9 @@ class StartFragment : Fragment() {
             mViewModel.initDatabase(TYPE_ROOM){
                 APP_ACTIVITY.mNavController.navigate(R.id.action_startFragment_to_mainFragment)
             }
+        }
+        mBinding.btnFirebase.setOnClickListener {
+            showToast("Coming soon")
         }
     }
 

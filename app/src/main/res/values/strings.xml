@@ -9,4 +9,6 @@
     <string name="btn_add_note">Добавить</string>
     <string name="bnt_room">Room</string>
     <string name="btn_update">Обновить</string>
+    <string name="init_firebase">Firebase</string>
+    <string name="choose_data_storage">Выберите место хранения данных</string>
 </resources>

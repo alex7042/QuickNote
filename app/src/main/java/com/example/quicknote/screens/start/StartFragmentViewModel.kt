@@ -18,8 +18,6 @@ class StartFragmentViewModel(application: Application):AndroidViewModel(applicat
                 REPOSITORY = AppRoomRepository(dao)
                 onSuccess()
             }
-
         }
-
     }
 }
